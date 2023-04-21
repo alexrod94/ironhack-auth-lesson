@@ -64,4 +64,11 @@ router.post("/login", (req, res) => {
   console.log(req.session);
 });
 
+router.post("/logout", (req, res, next) => {
+  req.session.destroy((err) => {
+    if (err) next(err);
+    res.redirect("/");
+  });
+});
+
 module.exports = router;
