@@ -6,7 +6,7 @@ router.get("/", (req, res, next) => {
   res.render("auth/register");
 });
 
-router.get("/home", (req, res, next) => {
+router.get("/userProfile", (req, res, next) => {
   res.render("index");
 });
 
