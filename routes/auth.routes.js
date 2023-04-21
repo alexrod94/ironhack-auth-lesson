@@ -60,6 +60,7 @@ router.post("/login", (req, res) => {
         errorMessage: err,
       });
     });
+  console.log(req.session);
 });
 
 module.exports = router;
