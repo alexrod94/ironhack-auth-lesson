@@ -7,7 +7,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/userProfile", (req, res, next) => {
-  res.render("index");
+  res.render("index", { user: req.session.currentUser });
 });
 
 module.exports = router;
