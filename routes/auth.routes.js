@@ -4,9 +4,11 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const saltRounds = 10;
 
+const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard");
+
 const User = require("../models/User.model");
 
-router.get("/register", (req, res, next) => {
+router.get("/register", isLoggedOut, (req, res, next) => {
   res.render("auth/register");
 });
 
@@ -33,7 +35,7 @@ router.post("/register", (req, res, next) => {
     });
 });
 
-router.get("/login", (req, res) => {
+router.get("/login", isLoggedOut, (req, res) => {
   res.render("auth/login");
 });
 
