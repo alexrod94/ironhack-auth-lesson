@@ -3,9 +3,13 @@
 {{#if user}}
   <h2>Welcome, {{user.username}}!</h2>
   <p>This is your profile page my friend!</p>
-  <button>
-    <a href="/userProfile">Reload the page</a>
+  <button class="btn btn-primary">
+    <a href="/userProfile" class="text-white text-decoration-none">Reload the
+      page</a>
   </button>
+  <form id="logout-form" action="/logout" method="POST">
+    <button class="btn btn-danger">Logout</button>
+  </form>
 {{else}}
   <p>Still no logged in user, sorry!</p>
 {{/if}}
